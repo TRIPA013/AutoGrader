@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Assignment SYSTEM "Assignment.dtd">
+<Assignment>
+	<Typee>Homework</Typee>
+	<Assignment_ID>1</Assignment_ID>
+	<Course_ID>0</Course_ID>
+	<Student_ID>0</Student_ID>
+	<Questions>
+		<Question>
+			<Section_ID>Section_ID</Section_ID>
+			<Question_ID>Question_ID</Question_ID>
+			<Content>Content</Content>
+			<Answer>Answer</Answer>
+			<Confidence>0</Confidence>
+			<Points>13.0</Points>
+			<IsReviewed>false</IsReviewed>
+			<IsForcedReview>false</IsForcedReview>
+		</Question>
+		<Question>
+			<Section_ID>Section_ID</Section_ID>
+			<Question_ID>Question_ID</Question_ID>
+			<Content>Content</Content>
+			<Answer>Answer</Answer>
+			<Confidence>0</Confidence>
+			<Points>2.0</Points>
+			<IsReviewed>false</IsReviewed>
+			<IsForcedReview>false</IsForcedReview>
+		</Question>
+		<Question>
+			<Section_ID>Section_ID</Section_ID>
+			<Question_ID>Question_ID</Question_ID>
+			<Content>Content</Content>
+			<Answer>Answer</Answer>
+			<Confidence>0</Confidence>
+			<Points>10.0</Points>
+			<IsReviewed>false</IsReviewed>
+			<IsForcedReview>false</IsForcedReview>
+		</Question>
+		<Question>
+			<Section_ID>Section_ID</Section_ID>
+			<Question_ID>Question_ID</Question_ID>
+			<Content>Content</Content>
+			<Answer>Answer</Answer>
+			<Confidence>0</Confidence>
+			<Points>1.0</Points>
+			<IsReviewed>false</IsReviewed>
+			<IsForcedReview>false</IsForcedReview>
+		</Question>
+	</Questions>
+</Assignment>

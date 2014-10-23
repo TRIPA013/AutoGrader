@@ -1,0 +1,31 @@
+<!-- edited with XMLSpy v2015 sp1 (http://www.altova.com) by Abhinav Tripathi (OSU) -->
+<!-- ELEMENT Assignment -->
+<!ELEMENT Assignment (Type, Assignment_ID, Course_ID, Student_ID, Questions)>
+<!-- ELEMENT Type -->
+<!ELEMENT Type (#PCDATA)>
+<!-- ELEMENT Assignment_ID -->
+<!ELEMENT Assignment_ID (#PCDATA)>
+<!-- ELEMENT Course_ID -->
+<!ELEMENT Course_ID (#PCDATA)>
+<!-- ELEMENT Student_ID -->
+<!ELEMENT Student_ID (#PCDATA)>
+<!-- ELEMENT Questions -->
+<!ELEMENT Questions (Question+)>
+<!-- ELEMENT Question -->
+<!ELEMENT Question (Section_ID, Question_ID, Content, Answer, Confidence, Points, IsReviewed, IsForcedReview)>
+<!-- ELEMENT Section_ID -->
+<!ELEMENT Section_ID (#PCDATA)>
+<!-- ELEMENT Question_ID -->
+<!ELEMENT Question_ID (#PCDATA)>
+<!-- ELEMENT Content -->
+<!ELEMENT Content (#PCDATA)>
+<!-- ELEMENT Answer -->
+<!ELEMENT Answer (#PCDATA)>
+<!-- ELEMENT Confidence -->
+<!ELEMENT Confidence (#PCDATA)>
+<!-- ELEMENT Points -->
+<!ELEMENT Points (#PCDATA)>
+<!-- ELEMENT IsReviewed -->
+<!ELEMENT IsReviewed (#PCDATA)>
+<!-- ELEMENT IsForcedReview -->
+<!ELEMENT IsForcedReview (#PCDATA)>

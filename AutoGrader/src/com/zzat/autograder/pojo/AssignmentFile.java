@@ -8,9 +8,9 @@ public class AssignmentFile {
 
 	private int assignmentID;
 
-	private int studentID;
+	private int userID;
 
-	private double points;
+	private double score;
 
 	private boolean isSolution;
 
@@ -45,36 +45,6 @@ public class AssignmentFile {
 	}
 
 	/**
-	 * @return the isSolution
-	 */
-	public boolean isSolution() {
-		return isSolution;
-	}
-
-	/**
-	 * @param isSolution
-	 *            the isSolution to set
-	 */
-	public void setSolution(boolean isSolution) {
-		this.isSolution = isSolution;
-	}
-
-	/**
-	 * @return the points
-	 */
-	public double getPoints() {
-		return points;
-	}
-
-	/**
-	 * @param points
-	 *            the points to set
-	 */
-	public void setPoints(double points) {
-		this.points = points;
-	}
-
-	/**
 	 * @return the assignmentID
 	 */
 	public int getAssignmentID() {
@@ -90,18 +60,48 @@ public class AssignmentFile {
 	}
 
 	/**
-	 * @return the studentID
+	 * @return the userID
 	 */
-	public int getStudentID() {
-		return studentID;
+	public int getUserID() {
+		return userID;
 	}
 
 	/**
-	 * @param studentID
-	 *            the studentID to set
+	 * @param userID
+	 *            the userID to set
 	 */
-	public void setStudentID(int studentID) {
-		this.studentID = studentID;
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+
+	/**
+	 * @return the score
+	 */
+	public double getScore() {
+		return score;
+	}
+
+	/**
+	 * @param score
+	 *            the score to set
+	 */
+	public void setScore(double score) {
+		this.score = score;
+	}
+
+	/**
+	 * @return the isSolution
+	 */
+	public boolean isSolution() {
+		return isSolution;
+	}
+
+	/**
+	 * @param isSolution
+	 *            the isSolution to set
+	 */
+	public void setSolution(boolean isSolution) {
+		this.isSolution = isSolution;
 	}
 
 }

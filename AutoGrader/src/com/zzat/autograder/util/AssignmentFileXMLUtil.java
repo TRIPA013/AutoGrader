@@ -3,27 +3,18 @@ package com.zzat.autograder.util;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
-import com.zzat.autograder.orm.AssignmentFileGateway;
 import com.zzat.autograder.pojo.AssignmentFile;
 
 public class AssignmentFileXMLUtil {
 
-	private static final String ASSIGNMENT_XML = "Assignment.xml";
-
+	
 	private static final String POINTS = "Points";
 
 	private static final String USER_ID = "Student_ID";
 
 	private static final String ASSIGNMENT_ID = "Assignment_ID";
 
-	public static void main(String[] args) {
-		AssignmentFile assignmentFile = AssignmentFileXMLUtil
-				.getAssignmentFile(ASSIGNMENT_XML);
-		System.out.println(assignmentFile.getAssignmentID());
-
-		AssignmentFileGateway.insertAssignmentFile(assignmentFile);
-		
-	}
+	
 
 	public static AssignmentFile getAssignmentFile(String assignmentXml) {
 
@@ -41,7 +32,7 @@ public class AssignmentFileXMLUtil {
 			assignmentFile.setScore(getTotalPoints(document));
 
 			assignmentFile.setSolution(false);
-			assignmentFile.setAssignmentFileName(ASSIGNMENT_XML);
+			assignmentFile.setAssignmentFileName(assignmentXml);
 
 			assignmentFile.setUserID(userID);
 		}

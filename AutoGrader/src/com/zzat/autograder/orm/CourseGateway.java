@@ -9,20 +9,18 @@ import com.zzat.autograder.util.DBHelper;
 
 public class CourseGateway {
 
-	public static int insertCourse(Course course) {
+	public static void insertCourse(Course course) {
 
-		int id = -1;
-		String sqlQuery = "Insert into Course (CourseName) values ('"
-				+ course.getCourseName() + "')";
+		String sqlQuery = "Insert into Course (CourseID, CourseName) values ("
+				+ course.getCourseId() + ",'" + course.getCourseName() + "')";
 		DBHelper db = new DBHelper();
 		try {
-			id = db.runInsertQuery(sqlQuery);
+			db.runInsertQuery(sqlQuery);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return id;
 	}
 
 	public static void updateCourse(Course course) {

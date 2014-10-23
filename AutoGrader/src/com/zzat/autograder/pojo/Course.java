@@ -1,9 +1,10 @@
 package com.zzat.autograder.pojo;
 
-import javax.persistence.*;
-
-@Entity
 public class Course {
+
+	private int courseId;
+
+	private String courseName;
 
 	/**
 	 * @return the courseId
@@ -13,7 +14,8 @@ public class Course {
 	}
 
 	/**
-	 * @param courseId the courseId to set
+	 * @param courseId
+	 *            the courseId to set
 	 */
 	public void setCourseId(int courseId) {
 		this.courseId = courseId;
@@ -27,13 +29,11 @@ public class Course {
 	}
 
 	/**
-	 * @param courseName the courseName to set
+	 * @param courseName
+	 *            the courseName to set
 	 */
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
 	}
 
-	private int courseId;
-
-	private String courseName;
 }

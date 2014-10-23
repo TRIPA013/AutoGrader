@@ -14,7 +14,6 @@ import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class XMLParser {
@@ -23,33 +22,23 @@ public class XMLParser {
 
 	private static final String ASSIGNMENT_DTD_XML = "Assignment-DTD.xml";
 
-	private static final String POINTS = "Points";
-
 	private static final String SCHEMA_PATH = "Assignment.xsd";
 
 	public static void main(String[] args) {
 		try {
 			Document document = getRootDocument(ASSIGNMENT_XML);
 
-			System.out.println("Total points: " + getTotalPoints(document));
+			System.out.println("Total points: "
+					+ AssignmentFileXMLUtil.getTotalPoints(document));
 
 			document = getRootDocument(ASSIGNMENT_DTD_XML);
-			System.out.println("Total points: " + getTotalPoints(document));
+			System.out.println("Total points: "
+					+ AssignmentFileXMLUtil.getTotalPoints(document));
 
 		} catch (Exception e) {
 			System.out.println("Error in parsing: " + e.getMessage());
 		}
 
-	}
-
-	public static float getTotalPoints(Document document) {
-		float totalPoints = 0.0f;
-		NodeList elementsByTagName = document.getElementsByTagName(POINTS);
-		for (int i = 0; i < elementsByTagName.getLength(); i++) {
-			totalPoints += Float.parseFloat(elementsByTagName.item(i)
-					.getFirstChild().getNodeValue());
-		}
-		return totalPoints;
 	}
 
 	public static Document getRootDocumentDTD(String fileName)
@@ -63,23 +52,31 @@ public class XMLParser {
 		return (document);
 	}
 
-	public static Document getRootDocument(String fileName)
-			throws ParserConfigurationException, SAXException, IOException {
+	public static Document getRootDocument(String fileName) {
+
+		Document document = null;
 
 		final SchemaFactory sf = SchemaFactory
 				.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
-		final Schema schema = sf.newSchema(new StreamSource(new File(
-				SCHEMA_PATH)));
+		Schema schema;
+		try {
+			schema = sf.newSchema(new StreamSource(new File(SCHEMA_PATH)));
 
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			DocumentBuilderFactory factory = DocumentBuilderFactory
+					.newInstance();
 
-		DocumentBuilder parser = factory.newDocumentBuilder();
-		Document document = parser.parse(fileName);
+			DocumentBuilder parser = factory.newDocumentBuilder();
+			document = parser.parse(fileName);
 
-		Validator validator = schema.newValidator();
-		validator.validate(new DOMSource(document));
+			Validator validator = schema.newValidator();
+			validator.validate(new DOMSource(document));
 
+		} catch (SAXException | ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return (document);
 	}
 }

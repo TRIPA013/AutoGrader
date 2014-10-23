@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Assignment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Assignment.xsd">
 	<Type>Homework</Type>
-	<Assignment_ID>a</Assignment_ID>
+	<Assignment_ID>100</Assignment_ID>
 	<Course_ID>0</Course_ID>
 	<Student_ID>0</Student_ID>
 	<Questions>

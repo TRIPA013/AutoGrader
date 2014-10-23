@@ -1,11 +1,9 @@
 package com.zzat.autograder.pojo;
 
-
 public class Course {
 
 	private int courseId;
 
-	
 	private String courseName;
 
 	/**

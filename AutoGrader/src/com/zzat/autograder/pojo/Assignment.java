@@ -2,6 +2,16 @@ package com.zzat.autograder.pojo;
 
 public class Assignment {
 
+	private int assignmentID;
+	
+	public int getAssignmentID() {
+		return assignmentID;
+	}
+
+	public void setAssignmentID(int assignmentID) {
+		this.assignmentID = assignmentID;
+	}
+
 	private int courseID;
 
 	public enum AssignmentType {

@@ -21,7 +21,8 @@ public class AssignmentFileXMLUtil {
 				.getAssignmentFile(ASSIGNMENT_XML);
 		System.out.println(assignmentFile.getAssignmentID());
 
-		AssignmentFileGateway.insertAssignment(assignmentFile);
+		AssignmentFileGateway.insertAssignmentFile(assignmentFile);
+		
 	}
 
 	public static AssignmentFile getAssignmentFile(String assignmentXml) {

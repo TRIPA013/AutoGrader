@@ -7,7 +7,8 @@ import com.zzat.autograder.util.DBHelper;
 
 public class AssignmentFileGateway {
 
-	public static void insertAssignment(AssignmentFile assignmentFile) {
+	public static int insertAssignmentFile(AssignmentFile assignmentFile) {
+		int id = -1;
 		String sqlQuery = "Insert into AssignmentFile (AssignmentFileName,AssignmentID,UserID,Score,IsSolution) values ('"
 				+ assignmentFile.getAssignmentFileName()
 				+ "','"
@@ -20,14 +21,15 @@ public class AssignmentFileGateway {
 				+ assignmentFile.isSolution() + "')";
 		DBHelper db = new DBHelper();
 		try {
-			db.runInsertQuery(sqlQuery);
+			id = db.runInsertQuery(sqlQuery);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return id;
 	}
 
-	public static void updateAssignment(AssignmentFile assignmentFile) {
+	public static void updateAssignmentFile(AssignmentFile assignmentFile) {
 		String sqlQuery = "Update AssignmentFile Set AssignmentID="
 				+ assignmentFile.getAssignmentID() + ",AssignmentFileName='"
 				+ assignmentFile.getAssignmentFileName() + "',Score='"
@@ -38,7 +40,7 @@ public class AssignmentFileGateway {
 		db.runUpdateQuery(sqlQuery);
 	}
 
-	public static void deleteAssignment(AssignmentFile assignmentFile) {
+	public static void deleteAssignmentFile(AssignmentFile assignmentFile) {
 		String sqlQuery = "Delete from AssignmentFile where AssignmentFileID="
 				+ assignmentFile.getAssignmentFileID();
 		DBHelper db = new DBHelper();

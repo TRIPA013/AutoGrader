@@ -1,5 +1,7 @@
 package com.zzat.autograder.pojo;
 
+import com.zzat.autograder.pojo.Assignment.AssignmentType;
+
 public class AssignmentFile {
 
 	private int assignmentFileID;

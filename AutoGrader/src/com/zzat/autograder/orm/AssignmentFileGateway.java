@@ -7,11 +7,7 @@ import com.zzat.autograder.util.DBHelper;
 
 public class AssignmentFileGateway {
 
-	public AssignmentFileGateway() {
-
-	}
-
-	private void insertAssignment(AssignmentFile assignmentFile) {
+	public static void insertAssignment(AssignmentFile assignmentFile) {
 		String sqlQuery = "Insert into AssignmentFile (AssignmentFileName,AssignmentID,UserID,Score,IsSolution) values ('"
 				+ assignmentFile.getAssignmentFileName()
 				+ "','"
@@ -31,7 +27,7 @@ public class AssignmentFileGateway {
 		}
 	}
 
-	private void updateAssignment(AssignmentFile assignmentFile) {
+	public static void updateAssignment(AssignmentFile assignmentFile) {
 		String sqlQuery = "Update AssignmentFile Set AssignmentID="
 				+ assignmentFile.getAssignmentID() + ",AssignmentFileName='"
 				+ assignmentFile.getAssignmentFileName() + "',Score='"
@@ -42,14 +38,14 @@ public class AssignmentFileGateway {
 		db.runUpdateQuery(sqlQuery);
 	}
 
-	private void deleteAssignment(AssignmentFile assignmentFile) {
+	public static void deleteAssignment(AssignmentFile assignmentFile) {
 		String sqlQuery = "Delete from AssignmentFile where AssignmentFileID="
 				+ assignmentFile.getAssignmentFileID();
 		DBHelper db = new DBHelper();
 		db.runUpdateQuery(sqlQuery);
 	}
 
-	private AssignmentFile findAssignmentFileByAssignmentFileID(AssignmentFile assignmentFile) {
+	public static AssignmentFile findAssignmentFileByAssignmentFileID(AssignmentFile assignmentFile) {
 
 		String sqlQuery = "Select TOP 1 * from AssignmentFile where AssignmentFileID="
 				+ assignmentFile.getAssignmentFileID();

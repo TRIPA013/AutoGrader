@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Assignment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Assignment.xsd">
+<Assignment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<Type>Homework</Type>
-	<Assignment_ID>100</Assignment_ID>
-	<Course_ID>0</Course_ID>
-	<Student_ID>0</Student_ID>
+	<Assignment_ID>1</Assignment_ID>
+	<Course_ID>6331</Course_ID>
+	<Student_ID>4</Student_ID>
 	<Questions>
 		<Question>
 			<Section_ID>Section_ID</Section_ID>
@@ -11,7 +11,7 @@
 			<Content>Content</Content>
 			<Answer>Answer</Answer>
 			<Confidence>0</Confidence>
-			<Points>13.0</Points>
+			<Points>11.0</Points>
 			<IsReviewed>false</IsReviewed>
 			<IsForcedReview>false</IsForcedReview>
 		</Question>

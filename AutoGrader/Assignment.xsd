@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+
+	<xs:simpleType name="assignment_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Homework" />
+			<xs:enumeration value="Quiz" />
+			<xs:enumeration value="Exam" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="confidence_type">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="100" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="Assignment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Type" type="assignment_type" />
+				<xs:element name="Assignment_ID" type="xs:integer" />
+				<xs:element name="Course_ID" type="xs:integer" />
+				<xs:element name="Student_ID" type="xs:integer" />
+				<xs:element name="Questions">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="1" maxOccurs="unbounded" name="Question">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Section_ID" type="xs:string" />
+										<xs:element name="Question_ID" type="xs:string" />
+										<xs:element name="Content" type="xs:string" />
+										<xs:element name="Answer" type="xs:string" />
+										<xs:element name="Confidence" type="confidence_type" />
+
+										<xs:element name="Points" type="xs:float" default="0.0" />
+										<xs:element name="IsReviewed" type="xs:boolean"
+											default="false" />
+										<xs:element name="IsForcedReview" type="xs:boolean"
+											default="false" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
